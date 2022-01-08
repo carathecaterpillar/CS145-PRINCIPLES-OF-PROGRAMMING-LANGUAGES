@@ -1,3 +1,6 @@
+--RONO, CARA 
+--Assignment 2.1 : CS145
+
 --returns the size of a list.
 size [] = 0
 size (x:xs) = 1 + size xs
@@ -30,17 +33,15 @@ merge new []  = new
 merge (x:xs) new = x: merge new xs
 
 --It multiplies two (2) lists. ???
-
-g a [] = []
-g a (x:xs) = a*x : g a xs 
+multl = (zipWith (*))
 
 -- sorts a list using insertion sort.
 insert x [] = [x]
 insert x (y:ys) | x < y     = x:y:ys
                 | otherwise = y:(insert x ys)
 
-isort [] = []
-isort (x:xs) = insert x (isort xs)
+srt [] = []
+srt (x:xs) = insert x (srt xs)
 
 --It returns the Fibonacci of n.
 fib n = fibs!!n
